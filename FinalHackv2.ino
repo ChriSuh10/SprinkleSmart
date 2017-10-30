@@ -36,6 +36,9 @@ void loop() {
 
   
   if (highAtTwelve == HIGH) {
+    lcd.clear();
+    lcd.print("SprinkleSmart");
+    lcd.setCursor(0, 1);
     lcd.print("ON");
     for (int k=0; k<5; k++) {
       for (int i=0; i<7; i++)
@@ -45,7 +48,12 @@ void loop() {
     }
   }
 
-  else lcd.print("OFF");
+  else {
+  lcd.clear();
+  lcd.print("SprinkleSmart");
+  lcd.setCursor(0, 1);
+  lcd.print("OFF");
+  }
   highAtTwelve = digitalRead(12);
 }
 
